@@ -1,0 +1,55 @@
+/* ２つのCSS Gridを組み合わせ、レイアウトを完成させましょう */
+
+.container {
+  display: grid;
+  grid-template:
+    "visual number expression" 100vh
+    "footer footer footer" 100px /
+    50% 120px 1fr;
+}
+
+.visual {
+  grid-area: visual;
+}
+
+.number {
+  grid-area: number;
+}
+
+.expression {
+  grid-area: expression;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.page-list {
+  background-color: #f2f2f2;
+  display: grid;
+  padding: 40px;
+  gap: 30px 20px;
+  grid-template:
+    repeat(3, auto) /
+    repeat(4, 1fr);
+}
+
+.item img {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template:
+      "visual visual" 50vh
+      "number expression" 50vh
+      "footer footer" 100px /
+      120px 1fr;
+  }
+
+  .page-list {
+    grid-template:
+      repeat(6, auto) /
+      repeat(2, 1fr);
+  }
+}

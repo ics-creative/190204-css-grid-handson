@@ -1,0 +1,9 @@
+.item img {
+  width: 100%;
+}
+
+/* CSS Gridによるレイアウトをこの下に書きましょう */
+
+.page-list {
+  display: grid;
+}

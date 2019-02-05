@@ -1,0 +1,73 @@
+/* CSS Gridによる変換前のコードです */
+
+/* autoprefixer grid: autoplace */
+
+/* CSS Gridによるレイアウト */
+.container {
+  display: grid;
+  min-height: 100%;
+  grid-template:
+    "visual number expression" 100vh
+    "page-list page-list page-list" 1fr
+    "footer footer footer" 100px /
+    50% 120px 1fr;
+}
+
+.visual {
+  grid-area: visual;
+}
+
+.number {
+  grid-area: number;
+}
+
+.expression {
+  grid-area: expression;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.page-list {
+  grid-area: page-list;
+  background-color: #f2f2f2;
+  display: grid;
+  justify-content: center;
+  padding: 40px;
+  gap: 30px 20px;
+  /*grid-template:*/
+  /*  repeat(3, auto) /*/
+  /*  repeat(4, minmax(auto, 330px));*/
+  /* IE11対応：行の定義と列の定義を別々に書く。残念ながらmin-maxとの組み合わせは現状難しい。 */
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+}
+
+.item img {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .container {
+    grid-template:
+      "visual visual" 50vh
+      "number expression" 50vh
+      "page-list page-list" 1fr
+      "footer footer" 100px /
+      120px 1fr;
+  }
+
+  .page-list {
+    /*grid-template:*/
+    /*  repeat(6, auto) /*/
+    /*  repeat(2, 1fr);*/
+
+    /* IE11対応：テンプレートが変わったら、再度gapを定義する */
+    gap: 30px 20px;
+    /* IE11対応：行の定義と列の定義を別々に書く */
+    grid-template-rows: repeat(6, auto);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

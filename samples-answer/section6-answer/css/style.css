@@ -1,0 +1,238 @@
+/* autoprefixer grid: autoplace */
+
+/* CSS Gridによるレイアウト */
+.container {
+  display: -ms-grid;
+  display: grid;
+  min-height: 100%;
+  -ms-grid-rows: 100vh 1fr 100px;
+  -ms-grid-columns: 50% 120px 1fr;
+  grid-template:
+    "visual number expression" 100vh
+    "page-list page-list page-list" 1fr
+    "footer footer footer" 100px /
+    50% 120px 1fr;
+}
+
+.visual {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: visual;
+}
+
+.number {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: number;
+}
+
+.expression {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: expression;
+}
+
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
+}
+
+.page-list {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: page-list;
+  background-color: #f2f2f2;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 40px;
+  gap: 30px 20px;
+  /*grid-template:*/
+  /*  repeat(3, auto) /*/
+  /*  repeat(4, minmax(auto, 330px));*/
+  /* IE11対応：行の定義と列の定義を別々に書く。残念ながらmin-maxとの組み合わせは現状難しい。 */
+  -ms-grid-rows: auto 30px auto 30px auto;
+  grid-template-rows: repeat(3, auto);
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+}
+
+.page-list > *:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+}
+
+.page-list > *:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+}
+
+.page-list > *:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+}
+
+.page-list > *:nth-child(4) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
+}
+
+.page-list > *:nth-child(5) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+}
+
+.page-list > *:nth-child(6) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+
+.page-list > *:nth-child(7) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+}
+
+.page-list > *:nth-child(8) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 7;
+}
+
+.page-list > *:nth-child(9) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+
+.page-list > *:nth-child(10) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+}
+
+.page-list > *:nth-child(11) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 5;
+}
+
+.page-list > *:nth-child(12) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 7;
+}
+
+.item img {
+  width: 100%;
+}
+
+@media (max-width: 800px) {
+  .container {
+    -ms-grid-rows: 50vh 50vh 1fr 100px;
+    -ms-grid-columns: 120px 1fr;
+    grid-template:
+      "visual visual" 50vh
+      "number expression" 50vh
+      "page-list page-list" 1fr
+      "footer footer" 100px /
+      120px 1fr;
+  }
+
+  .page-list {
+    /*grid-template:*/
+    /*  repeat(6, auto) /*/
+    /*  repeat(2, 1fr);*/
+
+    /* IE11対応：テンプレートが変わったら、再度gapを定義する */
+    gap: 30px 20px;
+    /* IE11対応：行の定義と列の定義を別々に書く */
+    -ms-grid-rows: auto 30px auto 30px auto 30px auto 30px auto 30px auto;
+    grid-template-rows: repeat(6, auto);
+    -ms-grid-columns: 1fr 20px 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-list > *:nth-child(1) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+  }
+
+  .page-list > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+
+  .page-list > *:nth-child(3) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+  }
+
+  .page-list > *:nth-child(4) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+
+  .page-list > *:nth-child(5) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+  }
+
+  .page-list > *:nth-child(6) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+  }
+
+  .page-list > *:nth-child(7) {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+  }
+
+  .page-list > *:nth-child(8) {
+    -ms-grid-row: 7;
+    -ms-grid-column: 3;
+  }
+
+  .page-list > *:nth-child(9) {
+    -ms-grid-row: 9;
+    -ms-grid-column: 1;
+  }
+
+  .page-list > *:nth-child(10) {
+    -ms-grid-row: 9;
+    -ms-grid-column: 3;
+  }
+
+  .page-list > *:nth-child(11) {
+    -ms-grid-row: 11;
+    -ms-grid-column: 1;
+  }
+
+  .page-list > *:nth-child(12) {
+    -ms-grid-row: 11;
+    -ms-grid-column: 3;
+  }
+  .visual {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .number {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+  }
+  .expression {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  footer {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .page-list {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+}

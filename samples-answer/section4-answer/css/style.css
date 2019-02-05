@@ -1,0 +1,13 @@
+.page-list {
+  background-color: #f2f2f2;
+  display: grid;
+  padding: 40px;
+  gap: 30px 20px;
+  grid-template:
+    repeat(3, auto) /
+    repeat(4, 1fr);
+}
+
+.item img {
+  width: 100%;
+}

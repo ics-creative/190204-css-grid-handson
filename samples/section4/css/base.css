@@ -1,0 +1,39 @@
+html,
+body {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+dl {
+  list-style: none;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+
+p {
+  font-size: 26px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN",
+    "メイリオ", Meiryo, sans-serif;
+  font-feature-settings: "palt";
+}
+
+dl {
+  padding: 5px;
+}
+
+.page-list {
+  background-color: #f2f2f2;
+}

@@ -1,0 +1,80 @@
+html,
+body {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+dl {
+  list-style: none;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+
+p {
+  font-size: 22px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, "游ゴシック Medium", "Yu Gothic Medium",
+    "游ゴシック体", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN",
+    "メイリオ", Meiryo, sans-serif;
+  font-feature-settings: "palt";
+}
+
+.visual {
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url(../images/cat_main.jpg);
+  min-width: 200px;
+  min-height: 200px;
+}
+
+.number {
+  border-right: 1px solid #e0e0e0;
+  font-size: 80px;
+  font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN",
+    HGS明朝E, メイリオ, Meiryo, serif;
+  text-align: center;
+}
+
+.expression {
+  padding: 40px;
+  /* テキストを縦方向中央そろえにする */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 26px;
+}
+
+.expression .lead {
+  font-family: Georgia, 游明朝, "Yu Mincho", YuMincho, "Hiragino Mincho ProN",
+    HGS明朝E, メイリオ, Meiryo, serif;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.expression .text {
+  font-size: 20px;
+  line-height: 60px;
+}
+
+footer {
+  background-color: #696969;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+dl {
+  padding: 5px;
+}
